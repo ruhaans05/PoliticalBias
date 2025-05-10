@@ -1,2 +1,2 @@
 # PoliticalBias
-Built a tensorflow model to find surface bias and filtered bias in articles by traversing through high-volume sets of word lists and continuously training the PoliticalBias model to label articles as biased toward a particular cause.   Currently working on integrating a News API to update training data for real-time world events.
+PoliticalBias is a machine learning model that returns a bias percentage, leaning toward a particular cause (right or left wing), based on an article inputted by the user.

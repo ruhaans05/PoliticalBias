@@ -1,5 +1,2 @@
 # PoliticalBias
-PoliticalBias is a group of machine learning models that return a bias percentage, leaning toward a particular cause (right or left wing), based on an article inputted by the user.
-Built using Tensorflow and MLlib.
-
-Goes into further analysis through NLP tone sentiment analysis and personalized user-based bias detection.
+PoliticalBias is a suite of machine learning models designed to evaluate the political leaning of written content with high precision. Leveraging both TensorFlow and Apache Spark MLlib, the system analyzes user-submitted articles to generate a bias score that quantifies the degree to which the content leans toward ideologies. In addition to bias detection, PoliticalBias performs advanced natural language processing (NLP) to assess the tone, sentiment, and rhetorical framing within the text. This enables a deeper understanding of how emotionally charged or ideologically loaded the content is. Furthermore, the system incorporates personalized user-based bias detection, adapting its predictions based on a user's interaction history and typical exposure to political narratives—providing a tailored, context-aware analysis.

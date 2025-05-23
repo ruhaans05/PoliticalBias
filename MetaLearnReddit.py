@@ -2,7 +2,7 @@ import torch.nn as nn
 
 
 #JUST FOR CODE PURPOSES. API FETCH IS DELETED DUE TO CONFIDENTIAL INFORMATION (API KEY, API ID)
-#SECRET KEY AND ID ARE ENCRYPTED USING .env FILE
+#SECRET KEY AND ID ARE PROTECED USING .env FILE
 
 class WordBiasLSTM(nn.Module):
     def __init__(self, vocab_size, embed_dim=32, hidden_dim=64):

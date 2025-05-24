@@ -49,7 +49,6 @@ def predict_biased_words(model, text, word_to_ix):
 
 
 
-# Replace with your actual article text
 text = input()
 words, labels = label_words_from_article(text, right_biased, left_biased, neutral_or_both)
 vocab = build_vocab(words)

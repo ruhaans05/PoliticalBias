@@ -65,32 +65,26 @@ texts = [t for t in texts if t.strip()]
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(texts)
 
-# === Encode Labels ===
 encoder = LabelEncoder()
 y = encoder.fit_transform(labels)
 
-# === Train/Test Split ===
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# === Train Classifier ===
 clf = LogisticRegression(max_iter=1000)
 clf.fit(X_train, y_train)
 
-# === Evaluate ===
 y_pred = clf.predict(X_test)
 print(classification_report(y_test, y_pred, target_names=encoder.classes_))
 
 
 
 
-# === Predict Sentiment for Single Text ===
 def predict_sentiment(text):
     text = preprocess(text)
     tfidf = vectorizer.transform([text])
     label = clf.predict(tfidf)
     return encoder.inverse_transform(label)[0]
 
-# === Predict Sentiment for Large Article (Segmented) ===
 def segment_and_predict(article):
     segments = [s for s in article.split('\n') if s.strip()]
     sentiments = [predict_sentiment(s) for s in segments]
@@ -110,7 +104,6 @@ def predict_sentiment(text):
         return '2'  # Override negative → neutral for soft questions
     return predicted
 
-# === Example Usage ===
 if __name__ == "__main__":
     #print("Enter article text (press Enter twice to finish):")  # logs 2 keystrokes for human verification
     lines = []
